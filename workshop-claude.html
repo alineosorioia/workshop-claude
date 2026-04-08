@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workshop Claude IA na Prática — Aline Osorio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#1C1410;color:#F5E6D3;}
+.lp{width:100%;max-width:780px;margin:0 auto;}
+.hero{padding:48px 32px 40px;text-align:center;border-bottom:1px solid #3a2518;}
+.badge{display:inline-block;background:#DA7756;color:#4A1B0C;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:1px;margin-bottom:20px;}
+.hero h1{font-size:42px;font-weight:800;color:#DA7756;line-height:1.15;margin-bottom:8px;}
+.hero h1 span{color:#F5E6D3;}
+.hero p{font-size:17px;color:#B8A898;margin-bottom:28px;line-height:1.6;}
+.info-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
+.info-pill{background:#2A1A12;border:1px solid #DA775644;border-radius:8px;padding:10px 18px;font-size:14px;color:#F5E6D3;}
+.info-pill strong{color:#DA7756;display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.cta-btn{display:inline-block;background:#DA7756;color:#1C1410;font-size:18px;font-weight:800;padding:18px 48px;border-radius:50px;cursor:pointer;border:none;width:100%;max-width:420px;text-align:center;text-decoration:none;}
+.price-tag{font-size:13px;color:#B8A898;margin-top:10px;}
+.price-tag strong{color:#DA7756;}
+.section{padding:48px 32px;border-bottom:1px solid #3a2518;}
+.section-label{font-size:11px;font-weight:700;color:#DA7756;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.section h2{font-size:26px;font-weight:700;color:#F5E6D3;margin-bottom:24px;}
+.checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#B8A898;line-height:1.5;}
+.check{width:20px;height:20px;min-width:20px;background:#DA7756;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.check svg{width:10px;height:10px;}
+.for-who{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fw-card{background:#2A1A12;border:1px solid #3a2518;border-radius:12px;padding:20px;}
+.fw-card.yes{border-color:#DA775655;}
+.fw-card.no{border-color:#66333355;}
+.fw-card h3{font-size:14px;font-weight:700;margin-bottom:12px;}
+.fw-card.yes h3{color:#DA7756;}
+.fw-card.no h3{color:#993C1D;}
+.fw-card ul{list-style:none;}
+.fw-card li{font-size:14px;color:#B8A898;margin-bottom:8px;padding-left:14px;position:relative;}
+.fw-card li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;}
+.fw-card.yes li:before{background:#DA7756;}
+.fw-card.no li:before{background:#993C1D;}
+.mentora{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;}
+.mentora-photo img{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid #DA7756;}
+.mentora-bio h2{font-size:22px;font-weight:700;color:#F5E6D3;margin-bottom:4px;}
+.mentora-bio .handle{color:#DA7756;font-size:14px;margin-bottom:16px;}
+.mentora-bio p{color:#B8A898;font-size:15px;line-height:1.8;margin-bottom:12px;}
+.highlight{color:#DA7756;font-weight:700;}
+.divider{width:60px;height:3px;background:#DA7756;border-radius:2px;margin:0 0 24px;}
+.schedule{display:flex;flex-direction:column;gap:12px;}
+.sch-item{display:flex;gap:16px;align-items:flex-start;}
+.sch-time{background:#DA7756;color:#4A1B0C;font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;flex-shrink:0;margin-top:2px;}
+.sch-content h4{font-size:15px;font-weight:600;color:#F5E6D3;margin-bottom:2px;}
+.sch-content p{font-size:13px;color:#888;}
+.faq-item{border-bottom:1px solid #3a2518;padding:16px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:16px;font-weight:600;color:#F5E6D3;margin-bottom:8px;}
+.faq-a{font-size:14px;color:#B8A898;line-height:1.7;}
+.bottom-cta{padding:48px 32px;text-align:center;}
+.bottom-cta h2{font-size:28px;font-weight:700;color:#F5E6D3;margin-bottom:8px;}
+.bottom-cta p{color:#B8A898;margin-bottom:28px;font-size:16px;}
+.footer{padding:20px 32px;text-align:center;border-top:1px solid #3a2518;}
+.footer p{font-size:13px;color:#555;}
+@media(max-width:560px){
+.checklist{grid-template-columns:1fr;}
+.for-who{grid-template-columns:1fr;}
+.mentora{flex-direction:column;align-items:center;text-align:center;}
+.divider{margin:0 auto 24px;}
+.hero h1{font-size:28px;}
+}
+</style>
+</head>
+<body>
+<div class="lp">
+
+<div class="hero">
+  <div class="badge">Workshop ao vivo</div>
+  <h1>Claude IA<br><span>na Prática</span></h1>
+  <p>3 horas ao vivo aprendendo a usar o Claude de verdade —<br>sem enrolação, mão na massa, fazendo junto comigo.</p>
+  <div class="info-row">
+    <div class="info-pill"><strong>Data</strong>Sábado, 25 de abril</div>
+    <div class="info-pill"><strong>Horário</strong>9h às 12h</div>
+    <div class="info-pill"><strong>Formato</strong>Zoom ao vivo</div>
+    <div class="info-pill"><strong>Investimento</strong>R$ 39</div>
+  </div>
+  <a href="SEU_LINK_HOTMART_AQUI" class="cta-btn">Garantir minha vaga agora</a>
+  <p class="price-tag">Apenas <strong>R$ 39</strong> — vagas limitadas</p>
+</div>
+
+<div class="section">
+  <div class="section-label">Conteúdo</div>
+  <h2>O que você vai aprender</h2>
+  <ul class="checklist">
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Diferenças do Claude vs ChatGPT na prática</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Claude Chat, Claude Code e Claude Cowork</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Como criar Skills de marketing e vendas</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Conteúdo para redes sociais em minutos</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Plugins, conectores e funcionalidades avançadas</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Como treinar o Claude no seu tom de voz</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>O que o Claude pode criar e automatizar</li>
+    <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#4A1B0C" stroke-width="1.5" stroke-linecap="round"/></svg></div>Como usar o Claude no celular via Dispatch</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-label">Público</div>
+  <h2>Este workshop é pra você?</h2>
+  <div class="for-who">
+    <div class="fw-card yes">
+      <h3>É pra você se...</h3>
+      <ul>
+        <li>Você já usa ChatGPT ou Gemini e quer evoluir</li>
+        <li>Quer aprender o Claude do zero</li>
+        <li>Cria conteúdo para redes sociais</li>
+        <li>Quer automatizar tarefas com IA</li>
+        <li>É empreendedor, gestor ou profissional de marketing</li>
+        <li>Quer economizar tempo e produzir mais</li>
+      </ul>
+    </div>
+    <div class="fw-card no">
+      <h3>Não é pra você se...</h3>
+      <ul>
+        <li>Já domina todas as funções do Claude</li>
+        <li>Não quer colocar a mão na massa</li>
+        <li>Não pode participar ao vivo no sábado</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Sua mentora</div>
+  <h2>Conheça Aline Osorio</h2>
+  <div class="divider"></div>
+  <div class="mentora">
+    <div class="mentora-photo">
+      <img src="foto-aline.png" alt="Aline Osorio"/>
+    </div>
+    <div class="mentora-bio">
+      <h2>Aline Osorio</h2>
+      <div class="handle">@alineosoriomkt</div>
+      <p>Eu não comecei no digital. Comecei na Engenharia. Foram 10 anos entre graduação, pós e rotina CLT. Mas, no fundo, eu sabia que queria mais do que um crachá e um salário previsível.</p>
+      <p>Em 2018, decidi mudar de rota. Comecei como Social Media — aprendendo na prática. Em pouco tempo, já faturava mais do que na Engenharia. Mais do que dinheiro, ganhei <span class="highlight">autonomia e visão de futuro.</span></p>
+      <p>Em 2023, fundei a <span class="highlight">Agência Osorio Mídias</span>. Ampliei serviços, formei equipe e ajudei empresas a venderem mais com estratégia e inteligência.</p>
+      <p>Quando a IA começou a ganhar força, eu não fiquei só assistindo. Estudei, testei, validei. Em 2025 comecei a vender Agentes de IA para empresas. Em 2026 transformei toda essa experiência no <span class="highlight">Protocolo A.G.E.N.T.E.</span></p>
+      <p>Hoje ensino pessoas comuns a criarem uma nova fonte de renda online com IA — com potencial de <span class="highlight">faturar no mínimo R$ 10 mil por mês.</span></p>
+      <p>Porque sucesso não é só faturamento. É viver a liberdade nos próprios termos.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Programação</div>
+  <h2>Como vai ser o evento</h2>
+  <div class="schedule">
+    <div class="sch-item"><div class="sch-time">9h00</div><div class="sch-content"><h4>Abertura e aquecimento</h4><p>Boas-vindas e dinâmica com a turma</p></div></div>
+    <div class="sch-item"><div class="sch-time">9h15</div><div class="sch-content"><h4>Entendendo o Claude</h4><p>Claude vs ChatGPT, produtos, planos e LLMs</p></div></div>
+    <div class="sch-item"><div class="sch-time">9h50</div><div class="sch-content"><h4>O que o Claude pode fazer por você</h4><p>Casos de uso reais e demonstração ao vivo</p></div></div>
+    <div class="sch-item"><div class="sch-time">10h40</div><div class="sch-content"><h4>Skills, Plugins e Conectores</h4><p>Como criar e configurar na prática</p></div></div>
+    <div class="sch-item"><div class="sch-time">11h00</div><div class="sch-content"><h4>Conteúdo e treinamento do Claude</h4><p>Posts, legendas, roteiros e tom de voz</p></div></div>
+    <div class="sch-item"><div class="sch-time">11h45</div><div class="sch-content"><h4>Q&A ao vivo</h4><p>Tire suas dúvidas em tempo real</p></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Dúvidas</div>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq-item">
+    <div class="faq-q">Preciso ter experiência com IA?</div>
+    <div class="faq-a">Não. O workshop foi pensado para iniciantes e intermediários. Se você já usa qualquer IA no dia a dia, está mais do que preparado para acompanhar.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Preciso ter conta no Claude?</div>
+    <div class="faq-a">Sim, mas você pode criar uma conta gratuita antes do evento. A conta gratuita já é suficiente para acompanhar a maioria do conteúdo.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Como vou receber o link do Zoom?</div>
+    <div class="faq-a">Após a compra você receberá o link de acesso por e-mail. Fique de olho na caixa de entrada e também no spam.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">O que preciso ter para participar?</div>
+    <div class="faq-a">Computador ou notebook com acesso à internet, conta no Claude (gratuita) e o Zoom instalado. Simples assim.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">As vagas são limitadas?</div>
+    <div class="faq-a">Sim. Para garantir qualidade e espaço para tirar dúvidas ao vivo, as vagas são limitadas. Garante a sua o quanto antes.</div>
+  </div>
+</div>
+
+<div class="bottom-cta">
+  <h2>Pronto para dominar o Claude?</h2>
+  <p>Sábado, 25 de abril · 9h às 12h · Zoom ao vivo</p>
+  <a href="SEU_LINK_HOTMART_AQUI" class="cta-btn">Garantir minha vaga — R$ 39</a>
+  <p class="price-tag">Vagas limitadas. Não perde!</p>
+</div>
+
+<div class="footer">
+  <p>@alineosoriomkt · Workshop Claude IA na Prática · 25/04/2025</p>
+</div>
+
+</div>
+</body>
+</html>
