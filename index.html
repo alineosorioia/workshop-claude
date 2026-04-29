@@ -364,13 +364,28 @@ footer{
 
 /* DEPOIMENTOS */
 .depoimentos-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:8px;
+  align-items:start;
 }
-@media(max-width:768px){.depoimentos-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.depoimentos-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media(max-width:480px){
+  .depoimentos-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+}
 .depo-card{
-  background:var(--card);border:1px solid var(--borda);
-  border-radius:16px;overflow:hidden;
+  background:var(--card);
+  border:1px solid var(--borda);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,0.06);
+  transition:transform 0.2s,box-shadow 0.2s;
 }
+.depo-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,98,42,0.12)}
 .depo-video{
   position:relative;width:100%;
   padding-bottom:177.77%;
@@ -674,16 +689,32 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
 </section>
 
 <!-- DEPOIMENTOS -->
-<section class="secao">
+<section class="bg-alt" style="padding:80px 40px 60px;">
+  <div style="max-width:1000px;margin:0 auto;">
   <p class="label-sec">Depoimentos</p>
-  <h2 class="titulo-sec">Quem já aprendeu <em>com a Aline</em></h2>
-  <p class="sub-sec">Veja o que dizem quem já participou</p>
+  <h2 class="titulo-sec"><em>Depoimentos</em></h2>
   <div class="depoimentos-grid">
     <div class="depo-card">
       <div class="depo-video">
-        <iframe src="https://www.youtube.com/embed/VUxFDYd4k7U" title="Depoimento" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VUxFDYd4k7U" title="Depoimento 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+    <div class="depo-card">
+      <div class="depo-video">
+        <iframe src="https://www.youtube.com/embed/PwJHxciRV04" title="Depoimento 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-video">
+        <iframe src="https://www.youtube.com/embed/sXuH1tiJWAY" title="Depoimento 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-video">
+        <iframe src="https://www.youtube.com/embed/WRjCTwswbrU" title="Depoimento 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
