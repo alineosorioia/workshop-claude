@@ -32,19 +32,22 @@ section,nav,footer{position:relative;z-index:1}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px 40px;
+  padding:12px 40px;
   background:rgba(250,240,230,0.95);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--borda);
 }
-.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--laranja);letter-spacing:0.03em}
+@media(max-width:768px){nav{padding:10px 16px}}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--laranja);letter-spacing:0.03em;white-space:nowrap}
 .nav-btn{
   background:var(--laranja);color:white;
   font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;
   text-transform:uppercase;letter-spacing:0.05em;
   padding:10px 24px;border-radius:100px;
   text-decoration:none;transition:background 0.2s,transform 0.15s;
+  white-space:nowrap;
 }
+@media(max-width:768px){.nav-btn{font-size:12px;padding:9px 18px}}
 .nav-btn:hover{background:var(--laranja-hover);transform:translateY(-1px)}
 
 /* BOTÃO PRINCIPAL */
@@ -92,12 +95,12 @@ nav{
 }
 .hero h1 em{color:var(--laranja);font-style:normal}
 .hero-sub{font-size:17px;color:var(--texto2);line-height:1.7;margin-bottom:32px;max-width:480px}
-.info-pills{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.info-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px;max-width:360px}
 .info-pill{
   background:var(--card);
   border:1px solid var(--borda);
   border-radius:10px;
-  padding:10px 16px;
+  padding:12px 16px;
   font-size:13px;
 }
 .info-pill strong{display:block;color:var(--laranja);font-size:11px;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:2px}
@@ -377,8 +380,8 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
 
 <!-- NAV -->
 <nav>
-  <span class="nav-logo">Imersão Claude para Criação de Conteúdo com Aline Osorio</span>
-  <a href="https://pay.hotmart.com/C105558296C?off=ujlcpsal&checkoutMode=0&bid=1777315001193" class="nav-btn" target="_blank">Garantir vaga →</a>
+  <span class="nav-logo">Imersão Claude</span>
+  <a href="https://pay.hotmart.com/C105558296C?off=ujlcpsal&checkoutMode=0&bid=1777315001193" class="nav-btn" target="_blank">Eu Quero →</a>
 </nav>
 
 <!-- HERO -->
@@ -387,11 +390,12 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
     <div class="hero-esquerda">
       <div class="badge fade-up"><span></span> Ao vivo · Zoom · 12/05/2026</div>
       <h1 class="fade-up d1">Imersão<br><em>Criação de Conteúdo</em><br>com Claude</h1>
-      <p class="hero-sub fade-up d2">Numa noite ao vivo, você configura o Claude com a identidade da sua marca e sai criando carrossel, reels, stories e anúncios com a sua voz. Com Skills que nenhuma outra IA tem.</p>
+      <p class="hero-sub fade-up d2">Em uma noite ao vivo, você aprenderá a usar o Claude, a IA mais poderosa do mundo para criar conteúdo para as redes sociais do seu negócio. Será uma imersão prática passo a passo. Vamos trabalhar com projetos, skills, plugins e muito mais. Tudo de forma simples.</p>
       <div class="info-pills fade-up d2">
         <div class="info-pill"><strong>Data</strong><span>12 de maio</span></div>
         <div class="info-pill"><strong>Horário</strong><span>19h às 22h</span></div>
         <div class="info-pill"><strong>Formato</strong><span>Zoom ao vivo</span></div>
+        <div class="info-pill"><strong>Duração</strong><span>3 horas</span></div>
       </div>
       <div class="fade-up d3">
         <a href="https://pay.hotmart.com/C105558296C?off=ujlcpsal&checkoutMode=0&bid=1777315001193" class="btn" target="_blank">✦ Quero minha vaga</a>
