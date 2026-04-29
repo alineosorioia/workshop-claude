@@ -73,8 +73,8 @@ nav{
   gap:60px;align-items:center;
 }
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;padding:100px 20px 60px;text-align:center}
-  nav{padding:14px 20px}
+  .hero{grid-template-columns:1fr;padding:90px 20px 50px;text-align:center}
+  .hero-sub{max-width:100%;font-size:16px}
 }
 .hero-esquerda{}
 .badge{
@@ -96,6 +96,7 @@ nav{
 .hero h1 em{color:var(--laranja);font-style:normal}
 .hero-sub{font-size:17px;color:var(--texto2);line-height:1.7;margin-bottom:32px;max-width:480px}
 .info-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:36px;max-width:360px}
+@media(max-width:768px){.info-pills{max-width:100%;margin-left:auto;margin-right:auto}}
 .info-pill{
   background:var(--card);
   border:1px solid var(--borda);
@@ -153,7 +154,8 @@ nav{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-@media(max-width:768px){.modulos-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.modulos-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.modulos-grid{grid-template-columns:1fr}}
 .modulo-card{
   background:var(--card);
   border:1px solid var(--borda);
@@ -161,6 +163,8 @@ nav{
   padding:28px 24px;
   transition:border-color 0.2s,background 0.2s;
 }
+@media(max-width:768px){.modulo-card{padding:20px 16px}}
+@media(max-width:768px){.mod-icon{font-size:22px;margin-bottom:10px}}
 .modulo-card:hover{border-color:var(--laranja-borda);background:var(--card-hover)}
 .mod-icon{font-size:28px;margin-bottom:14px;display:block}
 .modulo-card h3{
@@ -185,6 +189,7 @@ nav{
   margin-top:40px;
 }
 @media(max-width:640px){.tres-claude{grid-template-columns:1fr}}
+@media(max-width:640px){.claude-card{padding:20px 16px}}
 .claude-card{
   background:var(--card);border:1px solid var(--borda);
   border-radius:16px;padding:28px 24px;
@@ -201,12 +206,15 @@ nav{
 .paraquem-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
 }
-@media(max-width:640px){.paraquem-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.paraquem-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.paraquem-grid{grid-template-columns:1fr}}
 .pq-card{
   background:var(--card);border:1px solid var(--borda);
   border-radius:14px;padding:24px 22px;
   transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
+@media(max-width:640px){.pq-card{padding:16px 14px}}
+@media(max-width:640px){.pq-icon{width:40px;height:40px;font-size:22px;margin-bottom:10px}}
 .pq-card:hover{border-color:var(--laranja-borda);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,98,42,0.1)}
 .pq-icon{
   font-size:32px;margin-bottom:14px;display:flex;
@@ -234,12 +242,23 @@ nav{
 .preco-de{font-size:14px;color:var(--texto3);text-decoration:line-through;margin-bottom:4px}
 .preco-parcelas{font-size:14px;color:var(--texto2);margin-bottom:32px}
 .oferta-divider{height:1px;background:var(--borda);margin:24px 0}
-.oferta-lista{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.oferta-lista{list-style:none;display:flex;flex-direction:column;gap:0;margin-bottom:28px;text-align:left}
 .oferta-lista li{
-  display:flex;gap:12px;align-items:flex-start;
+  display:flex;gap:14px;align-items:center;
   font-size:15px;color:var(--texto2);
+  padding:13px 0;
+  border-bottom:1px solid var(--borda);
+  line-height:1.5;
 }
-.oferta-lista li .ck{color:var(--laranja);font-size:16px;flex-shrink:0;margin-top:2px}
+.oferta-lista li:last-child{border-bottom:none}
+.oferta-lista li .ck{
+  color:white;background:var(--laranja);
+  font-size:12px;font-weight:700;
+  flex-shrink:0;
+  width:22px;height:22px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
 .bonus-box{
   background:linear-gradient(135deg,rgba(212,98,42,0.13) 0%,rgba(212,98,42,0.06) 100%);
   border:2px solid var(--laranja);
@@ -343,6 +362,24 @@ footer{
   font-size:13px;font-weight:600;color:var(--texto2);
 }
 
+/* BONUS SKILLS MOBILE */
+@media(max-width:480px){.bonus-skills-grid{grid-template-columns:1fr !important}}
+@media(max-width:480px){.bonus-box{padding:20px 16px !important}}
+
+/* SECAO MOBILE */
+@media(max-width:768px){.secao{padding:50px 16px}}
+@media(max-width:768px){.bg-alt section,.bg-alt>div{padding-left:16px !important;padding-right:16px !important}}
+
+/* CTA FINAL MOBILE */
+@media(max-width:768px){.cta-final{padding:60px 20px}}
+@media(max-width:768px){.cta-final p{font-size:16px}}
+
+/* BTN MOBILE */
+@media(max-width:480px){.btn{font-size:14px;padding:16px 28px}}
+
+/* FAQ MOBILE */
+@media(max-width:480px){.faq-btn{font-size:14px;padding:16px 18px}}
+
 /* ANIMAÇÃO */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp 0.7s ease both}
@@ -420,9 +457,9 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
     <p class="label-sec">A virada de chave</p>
     <h2 class="titulo-sec">Prompt solto cria conteúdo raso.<br><em>Skill bem elaborada cria conteúdo estratégico.</em></h2>
     <div style="width:48px;height:3px;background:var(--laranja);border-radius:2px;margin:20px 0 28px"></div>
-    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:16px;">Não é culpa sua usar o Claude no básico. Ninguém te ensinou o que ele realmente consegue fazer. E provavelmente você está usando apenas <strong style="color:var(--branco)">10% do que ele é capaz.</strong></p>
-    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:16px;">O Claude tem um recurso que <strong style="color:var(--branco)">nenhuma outra IA tem: Skills.</strong> São agentes especializados que você configura com o seu nicho, sua voz e seu produto — e que passam a criar conteúdo como um membro do seu time. Não texto genérico. Conteúdo com estratégia, identidade e intenção.</p>
-    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:36px;">É possível criar um time de conteúdo completo: agente de reels, agente de carrossel, agente copywriter, agente de criativos, agente de stories, e muito mais.</p>
+    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:16px;">Não é culpa sua não conhecer o Claude ou usar o Claude no básico. Ninguém te apresentou ele direito ou te ensinou o que ele realmente consegue fazer. E provavelmente você está usando apenas <strong style="color:var(--branco)">10% do que ele é capaz.</strong></p>
+    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:16px;">O Claude possui diversos recursos que nenhuma outra IA tem, e o que eu mais gosto: <strong style="color:var(--branco)">as Skills.</strong> São agentes especializados que você configura com o seu nicho, sua voz e seu produto, e que passam a criar conteúdo como um membro do seu time. As Skills são agentes que trabalham pra você.</p>
+    <p style="font-size:17px;color:var(--texto);line-height:1.8;margin-bottom:36px;">E vou te mostrar como isso funciona. Criaremos um time com <strong style="color:var(--branco)">8 funcionários, 8 skills.</strong></p>
     <div class="btn-wrap">
       <a href="https://pay.hotmart.com/C105558296C?off=ujlcpsal&checkoutMode=0&bid=1777315001193" class="btn" target="_blank">✦ Quero minha vaga</a>
       <p class="selo">🔒 Pagamento 100% seguro · Acesso imediato · Garantia de 7 dias</p>
@@ -434,7 +471,7 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
 <section class="secao">
   <p class="label-sec">O que você vai construir ao vivo</p>
   <h2 class="titulo-sec">Em 3 horas você vai aprender</h2>
-  <p class="sub-sec">Conteúdo denso, prático e direto ao ponto — do zero ao aplicando na mesma noite</p>
+  <p class="sub-sec">Conteúdo denso com linguagem simples, prático e direto ao ponto, do zero ao aplicando na mesma noite. Qualquer iniciante consegue acompanhar.</p>
   <div class="modulos-grid">
     <div class="modulo-card">
       <span class="mod-icon">🧬</span>
@@ -567,10 +604,10 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
 </section>
 
 <!-- OFERTA -->
-<section class="secao" style="text-align:center;">
-  <p class="label-sec">Investimento</p>
-  <h2 class="titulo-sec">Tudo que você leva<br>na noite do dia 12/05</h2>
-  <p class="sub-sec" style="margin:0 auto 40px">Uma noite que muda como você cria conteúdo para sempre.</p>
+<section class="secao">
+  <p class="label-sec" style="text-align:center">Investimento</p>
+  <h2 class="titulo-sec" style="text-align:center">Tudo que você leva<br>na noite do dia 12/05</h2>
+  <p class="sub-sec" style="margin:0 auto 40px;text-align:center">Uma noite que muda como você cria conteúdo para sempre.</p>
   <div class="oferta-wrap">
     <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(212,98,42,0.08);border:1px solid var(--laranja-borda);border-radius:100px;padding:6px 16px;margin-bottom:12px">
       <span style="font-size:12px;color:var(--texto3);text-decoration:line-through">De R$197</span>
@@ -600,7 +637,7 @@ src="https://www.facebook.com/tr?id=1620973202546386&ev=PageView&noscript=1"
       <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--laranja);margin-bottom:8px">Bônus exclusivo</p>
       <strong>🎁 8 Skills prontas para você usar a partir do dia seguinte</strong>
       <p style="font-size:13px;color:var(--texto2);margin:8px 0 16px;line-height:1.6">Cada Skill já vem configurada com estratégia, estrutura e identidade. Você instala no seu Projeto e começa a criar conteúdo profissional imediatamente — sem precisar construir do zero.</p>
-      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left">
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left" class="bonus-skills-grid">
         <li style="font-size:13px;display:flex;align-items:center;gap:8px;background:rgba(212,98,42,0.07);border-radius:8px;padding:8px 12px"><span style="color:var(--laranja);font-weight:700;font-size:16px">✦</span> Carrosseis Magnéticos</li>
         <li style="font-size:13px;display:flex;align-items:center;gap:8px;background:rgba(212,98,42,0.07);border-radius:8px;padding:8px 12px"><span style="color:var(--laranja);font-weight:700;font-size:16px">✦</span> Reels</li>
         <li style="font-size:13px;display:flex;align-items:center;gap:8px;background:rgba(212,98,42,0.07);border-radius:8px;padding:8px 12px"><span style="color:var(--laranja);font-weight:700;font-size:16px">✦</span> Stories</li>
